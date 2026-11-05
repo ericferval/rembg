@@ -5,3 +5,6 @@
 !README.md
 !.git
 .env
+!mcp_server/
+!mcp_server/**
+!mcp_server/Dockerfile.mcp
