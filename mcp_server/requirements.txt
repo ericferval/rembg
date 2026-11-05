@@ -1,4 +1,4 @@
-mcp
+mcp>=1.0,<2.0
 httpx
 rembg[cpu]
 onnxruntime
