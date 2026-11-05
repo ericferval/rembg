@@ -4,8 +4,22 @@ from urllib.parse import urlparse
 import httpx
 
 from mcp.server.fastmcp import FastMCP
+from mcp.server.transport_security import TransportSecuritySettings
 from rembg import remove
-
+mcp = FastMCP(
+    "rembg",
+    stateless_http=True,
+    json_response=True,
+    transport_security=TransportSecuritySettings(
+        enable_dns_rebinding_protection=True,
+        allowed_hosts=[
+            "rembg-mcp.onrender.com",
+            "rembg-mcp.onrender.com:*",
+            "localhost:*",
+            "127.0.0.1:*",
+        ],
+    ),
+)
 mcp = FastMCP("rembg", stateless_http=True, json_response=True)
 
 @mcp.tool()
