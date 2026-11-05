@@ -17,10 +17,16 @@ mcp = FastMCP(
             "rembg-mcp.onrender.com:*",
             "localhost:*",
             "127.0.0.1:*",
-        ],
-    ),
-)
-mcp = FastMCP("rembg", stateless_http=True, json_response=True)
+         ],
+
+    allowed_origins=[
+
+        "https://rembg-mcp.onrender.com",
+
+    ],
+
+),
+
 
 @mcp.tool()
 async def quitar_fondo(image_url: str) -> str:
