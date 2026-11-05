@@ -25,9 +25,8 @@ mcp = FastMCP(
 
     ],
 
-),
-
-
+    ),
+)
 @mcp.tool()
 async def quitar_fondo(image_url: str) -> str:
     """Elimina el fondo de una imagen pública y devuelve un PNG en base64."""
