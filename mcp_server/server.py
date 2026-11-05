@@ -2,7 +2,9 @@ import os
 from urllib.parse import urlparse
 
 import httpx
-from mcp.server.mcpserver import MCPServerfrom rembg import remove
+
+from mcp.server.fastmcp import FastMCP
+from rembg import remove
 
 mcp = FastMCP("rembg", stateless_http=True, json_response=True)
 
